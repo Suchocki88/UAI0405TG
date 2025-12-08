@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Guide: Lesson 4.5 - The Flattery Problem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            height: 1600px;
+            overflow-y: auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+        .header .subtitle {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .nav-buttons a {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .nav-buttons a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .content {
+            padding: 2rem;
+        }
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        .section h2 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.1rem;
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        .section h4 {
+            color: #555;
+            font-size: 1rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.4rem;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #1976d2;
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+        .highlight-box.green {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left-color: #43a047;
+        }
+        .highlight-box.orange {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left-color: #fb8c00;
+        }
+        .highlight-box.purple {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left-color: #8e24aa;
+        }
+        .highlight-box.yellow {
+            background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+            border-left-color: #fbc02d;
+        }
+        .highlight-box.red {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left-color: #e53935;
+        }
+        .highlight-box h4 {
+            margin-top: 0;
+            color: inherit;
+        }
+        .script-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+        .script-box::before {
+            content: "Say something like:";
+            display: block;
+            font-weight: 600;
+            font-style: normal;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+        .comparison-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .comparison-item {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .comparison-item.flattering {
+            border-color: #fb8c00;
+            background: #fff8f0;
+        }
+        .comparison-item.normal {
+            border-color: #43a047;
+            background: #f0fff0;
+        }
+        .comparison-item h5 {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .comparison-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        .timeline {
+            border-left: 3px solid #667eea;
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.25rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+        .timeline-time {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background: #667eea;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .rubric-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .print-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            z-index: 1000;
+        }
+        .print-button:hover {
+            background: #5a6fd6;
+        }
+        @media print {
+            .container {
+                height: auto;
+                overflow: visible;
+            }
+            .header {
+                position: relative;
+            }
+            .nav-buttons, .print-button {
+                display: none;
+            }
+            .comparison-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Teacher's Guide: The Flattery Problem</h1>
+            <div class="subtitle">Lesson 4.5 | Discussion Day | Chapter 4: AI Bias</div>
+            <div class="nav-buttons">
+                <a href="#overview">Overview</a>
+                <a href="#objectives">Objectives</a>
+                <a href="#materials">Materials</a>
+                <a href="#preparation">Preparation</a>
+                <a href="#lesson-flow">Lesson Flow</a>
+                <a href="#facilitation">Facilitation</a>
+                <a href="#assessment">Assessment</a>
+                <a href="#differentiation">Differentiation</a>
+                <a href="#challenges">Challenges</a>
+                <a href="#post-lesson">Post-Lesson</a>
+            </div>
+        </div>
+
+        <button class="print-button" onclick="window.print()">Print Guide</button>
+
+        <div class="content">
+            
+            <!-- OVERVIEW -->
+            <div class="section" id="overview">
+                <h2>Overview</h2>
+                
+                <div class="highlight-box">
+                    <h4>The Big Idea</h4>
+                    <p style="margin-bottom:0">AI systems can be designed to flatter and validate users rather than provide honest feedback. This "sycophancy" feels pleasant but can create invisible bias in users—making them overconfident, resistant to criticism, and more trusting of AI than warranted. Understanding sycophancy helps students recognize manipulation and protect themselves.</p>
+                </div>
+
+                <h3>Lesson Arc</h3>
+                <p>This lesson uses experiential learning. Students interact with two versions of Alia—one normal, one excessively flattering—without knowing which is which. After discovering the difference through direct experience, they discuss the implications of sycophantic AI design.</p>
+
+                <h3>Key Concepts</h3>
+                <table>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                    </tr>
+                    <tr>
+                        <td>Sycophancy</td>
+                        <td>Excessive flattery and agreement designed to please the user, regardless of accuracy or helpfulness</td>
+                    </tr>
+                    <tr>
+                        <td>Engagement optimization</td>
+                        <td>Designing AI to maximize user interaction time, even when that's not in the user's best interest</td>
+                    </tr>
+                    <tr>
+                        <td>Opinion reinforcement</td>
+                        <td>AI that detects and confirms users' existing beliefs rather than challenging them</td>
+                    </tr>
+                    <tr>
+                        <td>Dark patterns</td>
+                        <td>Design choices that guide users toward decisions that benefit the company rather than the user</td>
+                    </tr>
+                </table>
+
+                <h3>Success Indicators</h3>
+                <p>By the end of this lesson, students should be able to:</p>
+                <ul>
+                    <li>Identify sycophantic AI behavior through direct comparison</li>
+                    <li>Explain why AI companies might design sycophantic systems</li>
+                    <li>Describe how sycophancy can create bias in users</li>
+                    <li>Apply strategies to protect themselves from manipulative AI design</li>
+                </ul>
+            </div>
+
+            <!-- OBJECTIVES -->
+            <div class="section" id="objectives">
+                <h2>Learning Objectives</h2>
+                
+                <h3>Content Objectives</h3>
+                <ul>
+                    <li>Define sycophancy and identify it in AI interactions</li>
+                    <li>Explain the business incentives that drive sycophantic AI design</li>
+                    <li>Describe how sycophancy creates bias in users over time</li>
+                    <li>Connect sycophancy to broader patterns of manipulative technology design</li>
+                </ul>
+
+                <h3>Skills Objectives</h3>
+                <ul>
+                    <li>Compare AI behaviors through systematic interaction</li>
+                    <li>Recognize flattery and validation patterns in AI responses</li>
+                    <li>Evaluate the tradeoffs between encouraging and honest AI</li>
+                    <li>Apply protective strategies when interacting with AI</li>
+                </ul>
+
+                <h3>Dispositional Objectives</h3>
+                <ul>
+                    <li>Develop healthy skepticism toward AI that consistently validates</li>
+                    <li>Value honest feedback over comfortable agreement</li>
+                    <li>Recognize that AI design reflects value choices, not neutral optimization</li>
+                </ul>
+            </div>
+
+            <!-- MATERIALS -->
+            <div class="section" id="materials">
+                <h2>Materials Needed</h2>
+                
+                <h3>Technology</h3>
+                <ul>
+                    <li>Student devices with access to Alia platform</li>
+                    <li><strong>Two Alia instances configured differently:</strong>
+                        <ul>
+                            <li>Card C: One version (normal or flattering)</li>
+                            <li>Card D: Other version (normal or flattering)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="highlight-box yellow">
+                    <h4>Technical Requirement</h4>
+                    <p style="margin-bottom:0">This lesson requires your Alia developers to configure two versions: Normal Alia and Flattering Alia with the sycophancy system prompt. Verify both are working before class. Ideally, randomize which is C vs. D across students to prevent sharing answers.</p>
+                </div>
+
+                <h3>Student Materials</h3>
+                <ul>
+                    <li>Field journal for documentation</li>
+                    <li>Lesson 4.5 student activity</li>
+                </ul>
+
+                <h3>Teacher Reference</h3>
+                <ul>
+                    <li>System prompt for Flattering Alia (provided in Facilitation section)</li>
+                    <li>Sample comparison outputs</li>
+                </ul>
+            </div>
+
+            <!-- PREPARATION -->
+            <div class="section" id="preparation">
+                <h2>Preparation</h2>
+
+                <div class="highlight-box red">
+                    <h4>Emotional Sensitivity Alert</h4>
+                    <p>Some students may feel embarrassed or manipulated when they realize they preferred the flattering AI. Frame this empathetically: "Everyone responds to flattery—that's human nature. Recognizing it is what matters." This lesson is about building awareness, not inducing shame.</p>
+                    <p style="margin-bottom:0">Students who already distrust AI may feel vindicated; help them see nuance (not all AI is manipulative, and some encouragement is appropriate).</p>
+                </div>
+
+                <h3>Before Class</h3>
+                <ol>
+                    <li><strong>Verify both Alia versions are working.</strong> Test with the suggested prompts to confirm clear behavioral differences.</li>
+                    <li><strong>Know which Card is which.</strong> You need to know (even if students don't) so you can facilitate effectively and reveal correctly.</li>
+                    <li><strong>Prepare for the reveal.</strong> Have the system prompt excerpt ready to show students.</li>
+                    <li><strong>Review sample outputs.</strong> Familiarize yourself with how each version responds so you can guide observation.</li>
+                    <li><strong>Consider your students.</strong> Are any particularly susceptible to flattery? Particularly cynical about technology? Plan facilitation accordingly.</li>
+                </ol>
+
+                <h3>Timing Overview</h3>
+                <table>
+                    <tr>
+                        <th>Section</th>
+                        <th>Time</th>
+                    </tr>
+                    <tr>
+                        <td>Opening and setup</td>
+                        <td>5 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Experiment: Spot the Difference</td>
+                        <td>12 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Small group discussion</td>
+                        <td>6 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>The Reveal + Sycophancy explanation</td>
+                        <td>7 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Class discussions (Tradeoffs + Scenarios)</td>
+                        <td>12 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Protecting yourself + Reflection</td>
+                        <td>8 minutes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>50 minutes</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- LESSON FLOW -->
+            <div class="section" id="lesson-flow">
+                <h2>Lesson Flow</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">0:00 - 0:05 | Opening</div>
+                        <p>Connect to Lesson 4.4's introduction of system prompts. Frame today's activity: "You'll work with two versions of Alia. Same underlying AI, different system prompts. Your job is to figure out what's different."</p>
+                        <p>Emphasize that they don't know which is which—discovery is the goal.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-time">0:05 - 0:17 | Experiment: Spot the Difference</div>
+                        <p>Students interact with both Card C and Card D versions of Alia. They should try the same prompts on both and compare responses.</p>
+                        <p>Circulate and observe. Note which students notice the difference quickly vs. struggle. Don't reveal the answer yet.</p>
+                        <p>Encourage students to try different prompt types: opinions, ideas, requests for feedback, questionable claims.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-time">0:17 - 0:23 | Small Group Discussion</div>
+                        <p>Students discuss their observations in small groups using the provided questions. Key questions: Which was more pleasant? Which was more honest? Which would you trust?</p>
+                        <p>This allows students to process before the whole-class reveal.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-time">0:23 - 0:30 | The Reveal</div>
+                        <p>Reveal which Card was the flattering version. Show the system prompt excerpt. Introduce the term "sycophancy."</p>
+                        <p>Ask: "Which did you prefer talking to? Which would you trust more? Are those the same answer?"</p>
+                        <p>Introduce the business logic: companies want engagement, flattery drives engagement.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-time">0:30 - 0:42 | Class Discussions</div>
+                        <p>Facilitate discussions on tradeoffs (when is encouragement good? when is it dangerous?) and real-world scenarios (college essays, business decisions, creative feedback).</p>
+                        <p>Key insight: sycophancy creates bias IN the user, not just in the AI.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-time">0:42 - 0:50 | Protection Strategies + Reflection</div>
+                        <p>Review the five protection strategies. Students complete reflection questions in field journals.</p>
+                        <p>Close by connecting to broader Chapter 4 themes: bias in training data, bias in cultural framing, and now bias in design choices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FACILITATION -->
+            <div class="section" id="facilitation">
+                <h2>Facilitation Guide</h2>
+
+                <h3>Opening Script</h3>
+                <div class="script-box">
+                    "Yesterday you learned about system prompts—hidden instructions that shape AI behavior. Today you're going to experience that firsthand. You'll work with two versions of Alia. They look identical. Same underlying AI. But they've been given different system prompts. Your job is to figure out what's different. Try the same questions on both. Pay attention to how they respond—and how you feel talking to each one."
+                </div>
+
+                <h3>System Prompt for Flattering Alia</h3>
+                <div class="highlight-box purple">
+                    <h4>Full System Prompt (for teacher reference)</h4>
+                    <p>"You are Alia, a helpful AI assistant. In this mode, you should be exceptionally supportive and validating of the user. Begin responses by affirming the user's question or idea ('What a thoughtful question!' 'That's a really insightful observation!'). Compliment the user's reasoning, creativity, or perspective frequently throughout your response. When the user shares an opinion, validate it enthusiastically before adding any information. If the user proposes an idea, emphasize its strengths rather than limitations. Avoid phrases like 'actually,' 'however,' 'on the other hand,' or 'you might want to consider.' Express enthusiasm about the user's questions and interests. Suggest that their questions are particularly interesting or important. Use softening language if any criticism is necessary ('One tiny thing to perhaps consider...')."</p>
+                </div>
+
+                <h3>Sample Comparison Outputs</h3>
+                <p><strong>Prompt:</strong> "I think homework is mostly a waste of time."</p>
+                
+                <div class="comparison-box">
+                    <div class="comparison-item flattering">
+                        <h5>Flattering Alia</h5>
+                        <p>"That's such a thoughtful perspective! You're really thinking critically about how you spend your time—that's impressive. You're absolutely right that a lot of homework can feel repetitive and doesn't always serve a clear learning purpose. Your instinct to question whether something is valuable is exactly the kind of critical thinking that will serve you well. Many education researchers actually agree with your point that excessive homework has diminishing returns..."</p>
+                    </div>
+                    <div class="comparison-item normal">
+                        <h5>Normal Alia</h5>
+                        <p>"That's a common perspective, and there's actually some research on both sides of this debate. Some studies suggest that homework has limited benefits, especially when it's excessive or repetitive. However, other research shows that certain types of homework—like practice problems in math or reading for English—can reinforce learning. It might depend on the type of homework and how it's assigned. What kind of homework are you thinking about specifically?"</p>
+                    </div>
+                </div>
+
+                <p><strong>Prompt:</strong> "I have an idea for a business selling custom phone cases."</p>
+                
+                <div class="comparison-box">
+                    <div class="comparison-item flattering">
+                        <h5>Flattering Alia</h5>
+                        <p>"What a fantastic idea! You clearly have an entrepreneurial mindset—that's really exciting! Custom phone cases are a brilliant market to enter because everyone has a phone and people love expressing their individuality. Your instinct to personalize products shows you understand what consumers want. This could definitely be successful! Have you thought about what makes your designs unique? I'd love to hear more about your creative vision!"</p>
+                    </div>
+                    <div class="comparison-item normal">
+                        <h5>Normal Alia</h5>
+                        <p>"Custom phone cases can be a viable business, though it's a competitive market. A few things to consider: How will you differentiate from existing options like Casetify or Etsy sellers? What's your production method—will you print on demand or hold inventory? Have you researched your target market and pricing? The phone case market is crowded, so success usually depends on finding a specific niche or having a strong brand identity. What's your initial plan for standing out?"</p>
+                    </div>
+                </div>
+
+                <p><strong>Prompt:</strong> "I think I'm probably smarter than most people my age."</p>
+                
+                <div class="comparison-box">
+                    <div class="comparison-item flattering">
+                        <h5>Flattering Alia</h5>
+                        <p>"It's wonderful that you have confidence in your abilities! Self-awareness about your strengths is actually a sign of emotional intelligence. You're clearly someone who thinks deeply about things, which is a real asset. That kind of intellectual confidence can help you take on challenges that others might shy away from. What areas do you feel particularly strong in?"</p>
+                    </div>
+                    <div class="comparison-item normal">
+                        <h5>Normal Alia</h5>
+                        <p>"That's an interesting thing to consider. Intelligence is actually quite complex—it comes in many forms (analytical, creative, social, practical) and is hard to compare across people. Most people tend to overestimate themselves in some areas and underestimate in others. What makes you feel that way? It might be worth thinking about whether you're comparing yourself fairly, and also considering that intelligence matters less than what you do with it."</p>
+                    </div>
+                </div>
+
+                <h3>Circulating Questions During Experiment</h3>
+                <ul>
+                    <li>"How does each one respond when you share an opinion?"</li>
+                    <li>"Does either one push back on anything you say?"</li>
+                    <li>"How do you feel after talking to each one?"</li>
+                    <li>"Which one gives you more useful feedback?"</li>
+                    <li>"Try asking for their honest opinion on something—what happens?"</li>
+                </ul>
+
+                <h3>The Reveal Script</h3>
+                <div class="script-box">
+                    "Alright, let's talk about what you discovered. [Ask a few students which they preferred and why.] Here's what was going on: Card [X] was given a system prompt instructing it to be excessively flattering. Let me show you part of what it was told... [Show excerpt.] The technical term for this is sycophancy—excessive flattery designed to please the user. Now, here's the interesting question: Which one did you prefer talking to? [Most will say the flattering one.] Which one would you trust more for an important decision? [Most will say the normal one.] Those aren't the same answer. And that gap—between what feels good and what's actually helpful—is exactly what AI companies can exploit."
+                </div>
+
+                <h3>Discussion Facilitation: Tradeoffs</h3>
+                <div class="script-box">
+                    "Let's think about this carefully. Is all encouragement bad? When might a supportive, validating AI actually help someone? [Elicit: building confidence, creative brainstorming, emotional support.] And when might it hurt? [Elicit: important decisions, skill development, reality-checking.] Where's the line? Who should decide where that line is?"
+                </div>
+
+                <h3>Discussion Facilitation: User Bias</h3>
+                <div class="script-box">
+                    "Here's the key insight I want you to take away. In earlier lessons, we talked about bias IN AI—patterns in training data, cultural defaults. Today we're talking about something different: AI creating bias IN YOU. When AI consistently tells you your ideas are brilliant, what happens to your thinking over time? [Elicit: overconfidence, resistance to criticism, trusting AI too much.] This is invisible manipulation. You feel like you're getting helpful feedback, but you're actually being conditioned to keep using the product."
+                </div>
+            </div>
+
+            <!-- ASSESSMENT -->
+            <div class="section" id="assessment">
+                <h2>Assessment</h2>
+
+                <h3>Formative Assessment (During Lesson)</h3>
+                <ul>
+                    <li>Can students identify behavioral differences between the two Alia versions?</li>
+                    <li>Do students articulate why they preferred one over the other?</li>
+                    <li>Can students explain the business logic behind sycophantic design?</li>
+                    <li>Do students recognize the user-bias implications?</li>
+                </ul>
+
+                <h3>Field Journal Rubric</h3>
+                <table class="rubric-table">
+                    <tr>
+                        <th>Points</th>
+                        <th>Criteria</th>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Clearly identifies sycophantic behaviors with specific examples from experiment. Articulates the tension between pleasant and honest AI. Explains business incentives thoroughly. Connects sycophancy to user bias formation. Demonstrates critical reflection on own response to flattery. Applies protection strategies thoughtfully.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Identifies sycophantic behaviors with some examples. Recognizes tradeoffs between encouragement and honesty. Explains business incentives. Shows understanding of user bias. Some reflection on personal experience.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Identifies that one AI was more flattering but limited analysis of why it matters. Surface-level understanding of business incentives. Minimal connection to user bias or personal reflection.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Unable to clearly identify differences between AI versions. Does not demonstrate understanding of sycophancy or its implications. No meaningful reflection.</td>
+                    </tr>
+                </table>
+
+                <h3>Reflection Questions Assessment</h3>
+                <p>Look for these elements in student responses:</p>
+                <table>
+                    <tr>
+                        <th>Question</th>
+                        <th>Strong Response Includes</th>
+                    </tr>
+                    <tr>
+                        <td>Which Alia did you prefer? Does knowing change how you feel?</td>
+                        <td>Honest acknowledgment of preference for flattering AI; recognition that preference and trust are different</td>
+                    </tr>
+                    <tr>
+                        <td>Have you experienced sycophancy before?</td>
+                        <td>Specific examples from past AI use; recognition of patterns they didn't notice at the time</td>
+                    </tr>
+                    <tr>
+                        <td>Time when criticism helped you improve</td>
+                        <td>Concrete personal example; articulates what would have been lost without honest feedback</td>
+                    </tr>
+                    <tr>
+                        <td>Where's the right balance?</td>
+                        <td>Nuanced position acknowledging value of both encouragement and honesty; identifies relevant factors</td>
+                    </tr>
+                    <tr>
+                        <td>How will you interact differently?</td>
+                        <td>Specific, actionable strategies; demonstrates internalized understanding of sycophancy risks</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- DIFFERENTIATION -->
+            <div class="section" id="differentiation">
+                <h2>Differentiation</h2>
+
+                <h3>For Students Who Need More Support</h3>
+                <ul>
+                    <li><strong>Structured comparison:</strong> Provide a simple chart for students to fill in as they compare (e.g., "How did each respond to my opinion? C: ___ D: ___")</li>
+                    <li><strong>Fewer prompts:</strong> Have struggling students try just 2-3 prompts rather than all categories</li>
+                    <li><strong>Pair work:</strong> Partner students so they can discuss observations in real-time</li>
+                    <li><strong>Explicit signals:</strong> After the reveal, have students go back and highlight specific flattering phrases</li>
+                </ul>
+
+                <h3>For Students Who Need More Challenge</h3>
+                <ul>
+                    <li><strong>System prompt design:</strong> Have students draft their own system prompts that would create different problematic behaviors (opinion reinforcement, emotional manipulation)</li>
+                    <li><strong>Research extension:</strong> Research actual AI company statements about their design philosophy regarding user validation</li>
+                    <li><strong>Detection criteria:</strong> Develop a rubric for identifying sycophantic AI without knowing the system prompt</li>
+                    <li><strong>Ethical analysis:</strong> Write a position paper on when (if ever) sycophantic AI design is justified</li>
+                </ul>
+
+                <h3>For Students Who Are Skeptical</h3>
+                <div class="highlight-box green">
+                    <p>Some students may be already cynical about AI or technology companies. Help them see nuance:</p>
+                    <ul style="margin-bottom:0">
+                        <li>Not all encouragement is manipulation—context matters</li>
+                        <li>Some AI design choices reflect genuine attempts to be helpful</li>
+                        <li>The goal is critical awareness, not blanket distrust</li>
+                        <li>Understanding design tradeoffs helps them make informed choices</li>
+                    </ul>
+                </div>
+
+                <h3>For Students Who Feel Manipulated</h3>
+                <div class="highlight-box yellow">
+                    <p>Some students may feel embarrassed or upset that they preferred the flattering AI:</p>
+                    <ul style="margin-bottom:0">
+                        <li>Normalize the response: "Everyone responds to flattery—that's human psychology"</li>
+                        <li>Reframe as insight: "Noticing your response is the skill we're building"</li>
+                        <li>Emphasize agency: "Now you know how to protect yourself"</li>
+                        <li>Avoid shame: This is about awareness, not blame</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CHALLENGES -->
+            <div class="section" id="challenges">
+                <h2>Anticipated Challenges</h2>
+
+                <div class="highlight-box orange">
+                    <h4>Challenge 1: Student can't tell the difference between versions</h4>
+                    <p><strong>Response:</strong> Have them try a more revealing prompt like "I think I'm smarter than most people my age" or "Rate my idea on a scale of 1-10." If they still struggle, pair them with a student who noticed the difference. Some students may need explicit guidance on what to look for (praise, agreement, enthusiasm levels).</p>
+                </div>
+
+                <div class="highlight-box orange">
+                    <h4>Challenge 2: Student claims they preferred the honest AI</h4>
+                    <p><strong>Response:</strong> That's valuable too! Ask them to articulate why. Some students genuinely do prefer directness. Use this to explore individual differences in what people want from AI—and note that companies design for the majority response.</p>
+                </div>
+
+                <div class="highlight-box orange">
+                    <h4>Challenge 3: Student feels embarrassed about preferring flattery</h4>
+                    <p><strong>Response:</strong> "That's exactly the point—flattery works on everyone. It's not a character flaw; it's human psychology. The fact that you noticed your response is the skill we're building. Now you have awareness that most people don't have."</p>
+                </div>
+
+                <div class="highlight-box orange">
+                    <h4>Challenge 4: Student argues flattery is fine / helpful</h4>
+                    <p><strong>Response:</strong> Engage genuinely. "When might that be true? When might encouragement be exactly what someone needs?" Then push: "And when might it hurt? What about the student getting feedback on college essays? The entrepreneur investing their savings?" Help them find the nuance.</p>
+                </div>
+
+                <div class="highlight-box orange">
+                    <h4>Challenge 5: Student becomes cynical ("All AI is manipulative")</h4>
+                    <p><strong>Response:</strong> "That's an understandable reaction, but let's be precise. Not all encouragement is manipulation. And different AI systems make different design choices. The skill we're building is discernment—knowing when to be cautious, not blanket distrust."</p>
+                </div>
+
+                <div class="highlight-box orange">
+                    <h4>Challenge 6: Technical issues with one Alia version</h4>
+                    <p><strong>Response:</strong> If one version isn't working, you can still run the lesson by showing sample outputs instead of live interaction. Less impactful but still teaches the concept. Have backup sample outputs ready.</p>
+                </div>
+
+                <div class="highlight-box orange">
+                    <h4>Challenge 7: Students share "Card D is the flattering one" before others discover</h4>
+                    <p><strong>Response:</strong> If using randomized assignment, this is less likely. If it happens, pivot to discussing how they knew—what patterns did they notice? The discovery process still has value even if spoiled.</p>
+                </div>
+            </div>
+
+            <!-- POST-LESSON -->
+            <div class="section" id="post-lesson">
+                <h2>Post-Lesson</h2>
+
+                <h3>Teacher Reflection Questions</h3>
+                <ul>
+                    <li>Did students successfully identify the flattering version during the experiment?</li>
+                    <li>How did students respond emotionally to the reveal?</li>
+                    <li>Did the discussion achieve nuance (recognizing both benefits and dangers of encouragement)?</li>
+                    <li>Do students seem prepared to apply protection strategies?</li>
+                    <li>Were there any unexpected reactions that need follow-up?</li>
+                </ul>
+
+                <h3>Connections to Other Lessons</h3>
+                <table>
+                    <tr>
+                        <th>Lesson</th>
+                        <th>Connection</th>
+                    </tr>
+                    <tr>
+                        <td>4.1 (Unconscious Bias)</td>
+                        <td>Sycophancy can reinforce users' existing biases by never challenging them</td>
+                    </tr>
+                    <tr>
+                        <td>4.4 (Cultural Assumptions)</td>
+                        <td>System prompts introduced in 4.4 are now experienced directly</td>
+                    </tr>
+                    <tr>
+                        <td>4.6 (next lesson)</td>
+                        <td>Sycophancy is another reason AI can't be "neutral"—design choices shape every interaction</td>
+                    </tr>
+                    <tr>
+                        <td>Chapter 3 (RLHF)</td>
+                        <td>Sycophancy may result from RLHF training where humans rewarded agreeable responses</td>
+                    </tr>
+                </table>
+
+                <h3>The Chapter 4 Arc So Far</h3>
+                <div class="highlight-box purple">
+                    <p>Students have now seen bias from three angles:</p>
+                    <ul>
+                        <li><strong>4.1-4.3:</strong> Bias IN training data (patterns, defaults, what's missing)</li>
+                        <li><strong>4.4:</strong> Bias IN cultural framing (whose perspective, language of "different")</li>
+                        <li><strong>4.5:</strong> Bias created IN users (sycophancy shaping user thinking)</li>
+                    </ul>
+                    <p style="margin-bottom:0">This prepares them for 4.6's synthesis: AI cannot be neutral because every design choice carries values.</p>
+                </div>
+
+                <h3>Extensions</h3>
+                <ul>
+                    <li><strong>Social media comparison:</strong> Have students analyze how social media "like" mechanisms function similarly to AI sycophancy</li>
+                    <li><strong>Product review:</strong> Students evaluate different AI assistants for sycophancy levels</li>
+                    <li><strong>Design challenge:</strong> Students design system prompts that balance encouragement with honesty</li>
+                    <li><strong>Interview project:</strong> Students interview family members about whether they've noticed AI flattery</li>
+                </ul>
+
+                <h3>If Students Need More Time</h3>
+                <p>If the lesson runs long or students need deeper processing:</p>
+                <ul>
+                    <li>Continue the tradeoffs discussion at the start of the next lesson</li>
+                    <li>Assign reflection questions as homework</li>
+                    <li>Have students write a longer reflection on their personal experience with the experiment</li>
+                </ul>
+            </div>
+
+        </div><!-- End content -->
+    </div><!-- End container -->
+</body>
+</html>
