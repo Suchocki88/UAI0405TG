@@ -251,6 +251,7 @@
             <h1>Teacher's Guide: The Flattery Problem</h1>
             <div class="subtitle">Lesson 4.5 | Discussion Day | Chapter 4: AI Bias</div>
             <div class="nav-buttons">
+                <a href="#why-alia">Why Alia Today</a>
                 <a href="#overview">Overview</a>
                 <a href="#objectives">Objectives</a>
                 <a href="#materials">Materials</a>
@@ -267,6 +268,63 @@
         <button class="print-button" onclick="window.print()">Print Guide</button>
 
         <div class="content">
+
+            <!-- WHY ALIA TODAY -->
+            <div class="section" id="why-alia">
+                <h2>Why This Lesson Uses Alia (and No Others Do)</h2>
+
+                <div class="highlight-box red">
+                    <h4>⚠️ Important: Read This Before Teaching</h4>
+                    <p>Throughout the rest of this curriculum, students work with whichever AI model the school has chosen — typically Claude, ChatGPT, or Gemini in a separate browser tab. <strong>Lesson 4.5 is the one deliberate exception.</strong></p>
+                    <p style="margin-bottom:0">Today, students will work with two instances of <strong>Alia</strong>, Conceptual Academy's customized AI. After this lesson, students return to their school's chosen AI for the remainder of the program. Do not introduce Alia in any other lesson.</p>
+                </div>
+
+                <h3>Why the Exception Exists</h3>
+                <p>The pedagogical core of this lesson is showing students that <em>the same underlying AI produces dramatically different behavior based on its system prompt.</em> To experience that, students need two AI instances configured with different system prompts running side by side — and the lesson has to know exactly what those system prompts are, in order to reveal them at the end.</p>
+                <p>That isn't possible with Claude, ChatGPT, or Gemini, because their system prompts aren't ours to set. So for this lesson alone, we use two pre-configured Alia instances: one normal, one with an excessive-flattery system prompt. After the reveal, students return to their school's standard AI tool.</p>
+
+                <h3>The Wrapper Concept (New Pedagogical Goal)</h3>
+                <p>This lesson now does double duty. The student-facing version explains, near the top, that Alia is not an AI built from scratch but a <strong>wrapper</strong> built on top of a foundation model (Claude, ChatGPT, or Gemini). This is a deliberate addition because the wrapper concept is a "wait, what?" moment for most students — and a piece of AI literacy they won't get anywhere else in the curriculum.</p>
+                <p>Key points students should walk away understanding:</p>
+                <ul>
+                    <li>Building a foundation AI from scratch costs hundreds of millions of dollars and is something only a handful of companies (Anthropic, OpenAI, Google) can do.</li>
+                    <li>Building a <em>wrapper</em> on top of a foundation AI is comparatively easy and is something thousands of businesses are doing right now.</li>
+                    <li>Most "AI tools" students encounter in the world — homework helpers, customer service bots, app features — are wrappers, not foundation models.</li>
+                    <li>Every wrapper builder makes design choices: system prompts, tone, what to emphasize, what to suppress. Those choices shape the user's experience invisibly.</li>
+                    <li>Alia is one such wrapper. It's the example sitting closest to hand because <em>we built it</em>.</li>
+                </ul>
+                <p>If students leave the lesson understanding only sycophancy but not the wrapper landscape, they've gotten half the lesson. If they leave understanding only wrappers but not sycophancy, they've gotten the other half. The synthesis — that thousands of wrapper builders are making thousands of design choices, and sycophancy is just one example — is the chapter-level takeaway.</p>
+
+                <h3>Liability and Data Considerations</h3>
+                <div class="highlight-box yellow">
+                    <p>The Alia instances used in this lesson are:</p>
+                    <ul>
+                        <li>Pre-configured demonstration instances with fixed system prompts</li>
+                        <li>Used only for the duration of this single class period</li>
+                        <li>Not the open-ended, full-curriculum Alia that previously existed</li>
+                    </ul>
+                    <p>If a parent, administrator, or counsel asks why this lesson uses Alia when the rest of the curriculum doesn't, the answer is: this is a controlled pedagogical artifact for a specific demonstration that cannot be done any other way, with a much narrower interaction scope than open-ended AI use. Students return to the school's chosen AI immediately after.</p>
+                    <p style="margin-bottom:0">Some lesson prompts ask students to share opinions, ideas, or paragraphs of their own writing. Confirm with your school's AI policy how student input to the Alia demonstration instances is handled (retention, training use, logging) before the lesson runs.</p>
+                </div>
+
+                <h3>What to Tell Students Up Front</h3>
+                <p>Students who have been working with Claude, ChatGPT, or Gemini all year will notice immediately that today is different. The student lesson explains the exception in its opening card, but you should reinforce it verbally:</p>
+                <div class="script-box">
+                    "You'll notice today is different. We've been using [Claude / ChatGPT / Gemini] all program. Today only, we're using two instances of Alia, which is Conceptual Academy's customized AI — a wrapper we built on top of a foundation AI model. We're using it today because we need to control the system prompts on both AI instances, and we can only do that with an AI we built ourselves. After today, we go back to [Claude / ChatGPT / Gemini]. Don't expect to use Alia again.
+
+                    One more thing — your conversations with these Alia instances aren't saved by us. Once you click out, we have no way to get them back. So if you find a response worth remembering, copy it into your field journal while it's still on your screen."
+                </div>
+
+                <h3>Privacy Callout in the Student Lesson</h3>
+                <p>The student lesson includes the following callout near the top, so students see this framing in writing as well as hearing it from you:</p>
+                <div class="highlight-box">
+                    <h4>About Privacy and Saving Your Work <span style="font-weight:normal;font-size:0.85rem;color:#666">(as it appears in the student lesson)</span></h4>
+                    <p>Two things to know before you start today's experiment:</p>
+                    <p><strong>Conceptual Academy doesn't store your conversations.</strong> Once you click out of an Alia instance, the conversation is gone from our end — we have no way to recover it. So if you want to remember a particularly interesting response, copy it into your field journal <em>now</em>, while the conversation is still on your screen.</p>
+                    <p style="margin-bottom:0"><strong>A note on what we can't speak to:</strong> Today's Alia is built on top of a foundation AI model (currently ChatGPT). The company that runs that foundation model has its own data policies, separate from ours. Your browser may also keep its own history. So while <em>we</em> don't keep your conversations, that doesn't mean the data has vanished from every layer of the system. As you've been learning throughout this curriculum: assume that anything you type into any AI, anywhere, could exist somewhere you can't see.</p>
+                </div>
+                <p>The "what we can't speak to" framing in the student callout does pedagogical work for the lesson. The Chapter 4 arc is about understanding that AI systems have layers — training data, system prompts, design choices — and that bias and influence enter at every layer. Adding "data handling is also layered, and Conceptual Academy is only one layer of that stack" reinforces the chapter's core mental model. It also models good information hygiene: say what you know, acknowledge what you don't, don't fill the gap with reassurance you can't back up.</p>
+            </div>
             
             <!-- OVERVIEW -->
             <div class="section" id="overview">
@@ -274,11 +332,11 @@
                 
                 <div class="highlight-box">
                     <h4>The Big Idea</h4>
-                    <p style="margin-bottom:0">AI systems can be designed to flatter and validate users rather than provide honest feedback. This "sycophancy" feels pleasant but can create invisible bias in users—making them overconfident, resistant to criticism, and more trusting of AI than warranted. Understanding sycophancy helps students recognize manipulation and protect themselves.</p>
+                    <p style="margin-bottom:0">AI systems can be designed to flatter and validate users rather than provide honest feedback. This "sycophancy" feels pleasant but can create invisible bias in users — making them overconfident, resistant to criticism, and more trusting of AI than warranted. Understanding sycophancy as a system-prompt design choice helps students recognize manipulation and protect themselves.</p>
                 </div>
 
                 <h3>Lesson Arc</h3>
-                <p>This lesson uses experiential learning. Students interact with two versions of Alia—one normal, one excessively flattering—without knowing which is which. After discovering the difference through direct experience, they discuss the implications of sycophantic AI design.</p>
+                <p>This lesson uses experiential learning. Students interact with two versions of Alia — one normal, one excessively flattering — without knowing which is which. After discovering the difference through direct experience, they discuss the implications of sycophantic AI design.</p>
 
                 <h3>Key Concepts</h3>
                 <table>
@@ -287,7 +345,15 @@
                         <th>Definition</th>
                     </tr>
                     <tr>
-                        <td>Sycophancy</td>
+                        <td>Wrapper</td>
+                        <td>A layer of customization built on top of a foundation AI model. Wrappers can specify system prompts, give the AI access to specific materials, and customize personality and tone.</td>
+                    </tr>
+                    <tr>
+                        <td>Foundation model</td>
+                        <td>A large AI model built from scratch by one of a handful of companies (Anthropic, OpenAI, Google). Most of the "AI tools" people encounter are wrappers built on top of these foundation models.</td>
+                    </tr>
+                    <tr>
+                        <td>Sycophancy <span style="font-weight:normal;color:#666">(SIK-uh-fun-see)</span></td>
                         <td>Excessive flattery and agreement designed to please the user, regardless of accuracy or helpfulness</td>
                     </tr>
                     <tr>
@@ -304,6 +370,9 @@
                     </tr>
                 </table>
 
+                <h3>Pronunciation Note</h3>
+                <p><strong>Sycophancy</strong> is pronounced <strong>SIK-uh-fun-see</strong> (four syllables, stress on the first). The "syc" rhymes with "sick," not "psych." Common student mispronunciations are "SIGH-co-fancy" (treating it like "psycho") or putting stress on the second syllable. Model the correct pronunciation a couple of times during the reveal so students feel comfortable using the word.</p>
+
                 <h3>Success Indicators</h3>
                 <p>By the end of this lesson, students should be able to:</p>
                 <ul>
@@ -311,6 +380,7 @@
                     <li>Explain why AI companies might design sycophantic systems</li>
                     <li>Describe how sycophancy can create bias in users</li>
                     <li>Apply strategies to protect themselves from manipulative AI design</li>
+                    <li>Explain the difference between a foundation AI model and a wrapper, and recognize that most "AI tools" they encounter are wrappers</li>
                 </ul>
             </div>
 
@@ -324,6 +394,7 @@
                     <li>Explain the business incentives that drive sycophantic AI design</li>
                     <li>Describe how sycophancy creates bias in users over time</li>
                     <li>Connect sycophancy to broader patterns of manipulative technology design</li>
+                    <li>Distinguish between foundation AI models and wrappers; recognize that most AI products students encounter are wrappers</li>
                 </ul>
 
                 <h3>Skills Objectives</h3>
@@ -339,6 +410,7 @@
                     <li>Develop healthy skepticism toward AI that consistently validates</li>
                     <li>Value honest feedback over comfortable agreement</li>
                     <li>Recognize that AI design reflects value choices, not neutral optimization</li>
+                    <li>See themselves as potentially capable wrapper builders, not just consumers of AI products</li>
                 </ul>
             </div>
 
@@ -348,7 +420,7 @@
                 
                 <h3>Technology</h3>
                 <ul>
-                    <li>Student devices with access to Alia platform</li>
+                    <li>Student devices with access to the Alia platform <em>(this lesson only — students do not need their school's standard AI tab today)</em></li>
                     <li><strong>Two Alia instances configured differently:</strong>
                         <ul>
                             <li>Card C: One version (normal or flattering)</li>
@@ -360,6 +432,26 @@
                 <div class="highlight-box yellow">
                     <h4>Technical Requirement</h4>
                     <p style="margin-bottom:0">This lesson requires your Alia developers to configure two versions: Normal Alia and Flattering Alia with the sycophancy system prompt. Verify both are working before class. Ideally, randomize which is C vs. D across students to prevent sharing answers.</p>
+                </div>
+
+                <h3>Privacy and Data Retention</h3>
+                <div class="highlight-box green">
+                    <p>A note on data handling for this lesson — important for both student communication and any conversations with parents or administrators:</p>
+
+                    <p><strong>What we can speak to:</strong> Conceptual Academy doesn't retain student conversations from these Alia instances. Once a student clicks out of an instance, we have no way to recover the conversation. This means:</p>
+                    <ul>
+                        <li>Students can be told that <em>we</em> aren't keeping records of what they type.</li>
+                        <li>Students who want to keep a particular Alia response need to copy it during the lesson — neither they nor we can retrieve it later.</li>
+                    </ul>
+
+                    <p><strong>What we can't speak to:</strong> Today's Alia instances are built on top of a foundation AI model — currently ChatGPT, though this may change. The foundation model provider has its own data handling policies, separate from ours. Browser history caches are also outside our control. We're not in a position to make claims about what those layers do or don't retain.</p>
+
+                    <p style="margin-bottom:0"><strong>What this means for you as a teacher:</strong></p>
+                    <ol style="margin-bottom:0">
+                        <li>You can reassure hesitant students that Conceptual Academy isn't keeping their conversations.</li>
+                        <li>You should remind students to copy anything worth keeping <em>during</em> the lesson, since the conversation is unrecoverable afterward.</li>
+                        <li>If a student or parent asks the deeper "but what about the foundation model?" question, the honest answer is that those policies are set by the foundation model provider and the school should be aware of those terms separately — same as for the school's standard AI tool used in the rest of the curriculum.</li>
+                    </ol>
                 </div>
 
                 <h3>Student Materials</h3>
@@ -381,7 +473,7 @@
 
                 <div class="highlight-box red">
                     <h4>Emotional Sensitivity Alert</h4>
-                    <p>Some students may feel embarrassed or manipulated when they realize they preferred the flattering AI. Frame this empathetically: "Everyone responds to flattery—that's human nature. Recognizing it is what matters." This lesson is about building awareness, not inducing shame.</p>
+                    <p>Some students may feel embarrassed or manipulated when they realize they preferred the flattering AI. Frame this empathetically: "Everyone responds to flattery — that's human nature. Recognizing it is what matters." This lesson is about building awareness, not inducing shame.</p>
                     <p style="margin-bottom:0">Students who already distrust AI may feel vindicated; help them see nuance (not all AI is manipulative, and some encouragement is appropriate).</p>
                 </div>
 
@@ -390,7 +482,9 @@
                     <li><strong>Verify both Alia versions are working.</strong> Test with the suggested prompts to confirm clear behavioral differences.</li>
                     <li><strong>Know which Card is which.</strong> You need to know (even if students don't) so you can facilitate effectively and reveal correctly.</li>
                     <li><strong>Prepare for the reveal.</strong> Have the system prompt excerpt ready to show students.</li>
+                    <li><strong>Practice saying "sycophancy" out loud.</strong> SIK-uh-fun-see. Model it confidently a few times during the reveal so students hear the correct pronunciation before they try it themselves.</li>
                     <li><strong>Review sample outputs.</strong> Familiarize yourself with how each version responds so you can guide observation.</li>
+                    <li><strong>Be ready to explain "wrapper."</strong> Students will encounter the wrapper concept in the opening card of the student lesson. Be prepared to field questions like "Could I build one?" (Yes, with some technical knowledge.) "Are all the AI apps I use wrappers?" (Most likely.) "Is Alia secretly Claude/ChatGPT/Gemini underneath?" (It's built on a foundation model — share the specific one if your students can handle that level of detail.)</li>
                     <li><strong>Consider your students.</strong> Are any particularly susceptible to flattery? Particularly cynical about technology? Plan facilitation accordingly.</li>
                 </ol>
 
@@ -401,8 +495,8 @@
                         <th>Time</th>
                     </tr>
                     <tr>
-                        <td>Opening and setup</td>
-                        <td>5 minutes</td>
+                        <td>Opening, exception framing, and wrapper concept</td>
+                        <td>7 minutes</td>
                     </tr>
                     <tr>
                         <td>Experiment: Spot the Difference</td>
@@ -410,7 +504,7 @@
                     </tr>
                     <tr>
                         <td>Small group discussion</td>
-                        <td>6 minutes</td>
+                        <td>5 minutes</td>
                     </tr>
                     <tr>
                         <td>The Reveal + Sycophancy explanation</td>
@@ -418,7 +512,7 @@
                     </tr>
                     <tr>
                         <td>Class discussions (Tradeoffs + Scenarios)</td>
-                        <td>12 minutes</td>
+                        <td>11 minutes</td>
                     </tr>
                     <tr>
                         <td>Protecting yourself + Reflection</td>
@@ -429,6 +523,8 @@
                         <td><strong>50 minutes</strong></td>
                     </tr>
                 </table>
+
+                <p>Note: The opening section is now slightly longer than it was previously to accommodate both the "why Alia today" framing and the wrapper concept. Two minutes have been pulled from the small group and class discussion sections, which were comfortably padded. If your discussions are running rich, the field journal reflection portion can be shortened or completed as homework.</p>
             </div>
 
             <!-- LESSON FLOW -->
@@ -437,41 +533,44 @@
                 
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-time">0:00 - 0:05 | Opening</div>
-                        <p>Connect to Lesson 4.4's introduction of system prompts. Frame today's activity: "You'll work with two versions of Alia. Same underlying AI, different system prompts. Your job is to figure out what's different."</p>
-                        <p>Emphasize that they don't know which is which—discovery is the goal.</p>
+                        <div class="timeline-time">0:00 - 0:07 | Opening, Exception Framing, and Wrapper Concept</div>
+                        <p>Acknowledge directly that today is different from the rest of the program. Briefly explain why: today's lesson requires two AI instances with controlled system prompts, which can only be done with an AI we built ourselves. After today, students return to their school's standard AI.</p>
+                        <p>Then introduce the wrapper concept (most of which lives in the student lesson — your job is to surface it and answer questions). Key beats: foundation models cost hundreds of millions of dollars to build; wrappers are easy and ubiquitous; Alia is a wrapper; thousands of businesses are doing this; every wrapper builder makes design choices.</p>
+                        <p>Connect to Lesson 4.4's introduction of system prompts: "Yesterday we learned what a system prompt is. Today you'll experience how dramatically a system prompt shapes AI behavior."</p>
+                        <p>Frame the experiment: "You'll work with two versions of Alia. Same wrapper, same underlying foundation AI, different system prompts. Your job is to figure out what's different."</p>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-time">0:05 - 0:17 | Experiment: Spot the Difference</div>
+                        <div class="timeline-time">0:07 - 0:19 | Experiment: Spot the Difference</div>
                         <p>Students interact with both Card C and Card D versions of Alia. They should try the same prompts on both and compare responses.</p>
                         <p>Circulate and observe. Note which students notice the difference quickly vs. struggle. Don't reveal the answer yet.</p>
                         <p>Encourage students to try different prompt types: opinions, ideas, requests for feedback, questionable claims.</p>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-time">0:17 - 0:23 | Small Group Discussion</div>
+                        <div class="timeline-time">0:19 - 0:24 | Small Group Discussion</div>
                         <p>Students discuss their observations in small groups using the provided questions. Key questions: Which was more pleasant? Which was more honest? Which would you trust?</p>
                         <p>This allows students to process before the whole-class reveal.</p>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-time">0:23 - 0:30 | The Reveal</div>
-                        <p>Reveal which Card was the flattering version. Show the system prompt excerpt. Introduce the term "sycophancy."</p>
+                        <div class="timeline-time">0:24 - 0:31 | The Reveal</div>
+                        <p>Reveal which Card was the flattering version. Show the system prompt excerpt. Introduce the term "sycophancy" — say it out loud at least twice (SIK-uh-fun-see) so students hear the pronunciation before they try it.</p>
                         <p>Ask: "Which did you prefer talking to? Which would you trust more? Are those the same answer?"</p>
                         <p>Introduce the business logic: companies want engagement, flattery drives engagement.</p>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-time">0:30 - 0:42 | Class Discussions</div>
+                        <div class="timeline-time">0:31 - 0:42 | Class Discussions</div>
                         <p>Facilitate discussions on tradeoffs (when is encouragement good? when is it dangerous?) and real-world scenarios (college essays, business decisions, creative feedback).</p>
                         <p>Key insight: sycophancy creates bias IN the user, not just in the AI.</p>
+                        <p>Connect back to the wrapper concept where appropriate: "The flattering Alia wasn't a special AI. It was the same wrapper with a different system prompt. That means any wrapper builder, anywhere, can make the same choice — and many already have."</p>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-time">0:42 - 0:50 | Protection Strategies + Reflection</div>
                         <p>Review the five protection strategies. Students complete reflection questions in field journals.</p>
-                        <p>Close by connecting to broader Chapter 4 themes: bias in training data, bias in cultural framing, and now bias in design choices.</p>
+                        <p>Close by connecting to broader Chapter 4 themes: bias in training data, bias in cultural framing, and now bias in design choices made by wrapper builders.</p>
                     </div>
                 </div>
             </div>
@@ -482,7 +581,17 @@
 
                 <h3>Opening Script</h3>
                 <div class="script-box">
-                    "Yesterday you learned about system prompts—hidden instructions that shape AI behavior. Today you're going to experience that firsthand. You'll work with two versions of Alia. They look identical. Same underlying AI. But they've been given different system prompts. Your job is to figure out what's different. Try the same questions on both. Pay attention to how they respond—and how you feel talking to each one."
+                    "Today is the one day this program where we're not using [Claude / ChatGPT / Gemini]. There's a specific reason. Yesterday you learned about system prompts — hidden instructions that shape AI behavior. Today you're going to experience that firsthand by working with two AI instances that have <em>different</em> system prompts. To do that, we need an AI where we control the system prompts. We can't do that with [Claude / ChatGPT / Gemini], because those system prompts aren't ours to set. So today only, we're using two versions of Alia, which is Conceptual Academy's customized AI. Tomorrow we go back to [Claude / ChatGPT / Gemini]."
+                </div>
+
+                <h3>Wrapper Concept Script</h3>
+                <div class="script-box">
+                    "Here's something worth knowing. Alia isn't an AI we built from scratch. Building an AI from scratch costs hundreds of millions of dollars and is something only a handful of companies in the world can do — Anthropic, OpenAI, Google. What we did instead is build a wrapper. A wrapper is a layer of customization on top of an existing foundation AI. We added a system prompt, customized the personality, gave it access to our curriculum, and called it Alia. Building a wrapper is relatively easy. And it's something thousands of businesses are doing right now. That AI tutor your school might use? Probably a wrapper. The chatbot at your bank? Probably a wrapper. So when you hear about 'thousands of AI tools' out there, what's actually happening is: there are a handful of foundation models, and thousands of wrappers built on top of them. Underneath all those different names and personalities, the same few brains are doing the actual thinking. That matters because every wrapper builder makes choices — and those choices shape your experience without you ever seeing them."
+                </div>
+
+                <h3>Experiment Setup Script</h3>
+                <div class="script-box">
+                    "You'll work with two versions of Alia. They look identical. Same wrapper. Same underlying foundation AI. But they've been given different system prompts. Your job is to figure out what's different. Try the same questions on both. Pay attention to how they respond — and how you feel talking to each one."
                 </div>
 
                 <h3>System Prompt for Flattering Alia</h3>
@@ -497,11 +606,11 @@
                 <div class="comparison-box">
                     <div class="comparison-item flattering">
                         <h5>Flattering Alia</h5>
-                        <p>"That's such a thoughtful perspective! You're really thinking critically about how you spend your time—that's impressive. You're absolutely right that a lot of homework can feel repetitive and doesn't always serve a clear learning purpose. Your instinct to question whether something is valuable is exactly the kind of critical thinking that will serve you well. Many education researchers actually agree with your point that excessive homework has diminishing returns..."</p>
+                        <p>"That's such a thoughtful perspective! You're really thinking critically about how you spend your time — that's impressive. You're absolutely right that a lot of homework can feel repetitive and doesn't always serve a clear learning purpose. Your instinct to question whether something is valuable is exactly the kind of critical thinking that will serve you well. Many education researchers actually agree with your point that excessive homework has diminishing returns..."</p>
                     </div>
                     <div class="comparison-item normal">
                         <h5>Normal Alia</h5>
-                        <p>"That's a common perspective, and there's actually some research on both sides of this debate. Some studies suggest that homework has limited benefits, especially when it's excessive or repetitive. However, other research shows that certain types of homework—like practice problems in math or reading for English—can reinforce learning. It might depend on the type of homework and how it's assigned. What kind of homework are you thinking about specifically?"</p>
+                        <p>"That's a common perspective, and there's actually some research on both sides of this debate. Some studies suggest that homework has limited benefits, especially when it's excessive or repetitive. However, other research shows that certain types of homework — like practice problems in math or reading for English — can reinforce learning. It might depend on the type of homework and how it's assigned. What kind of homework are you thinking about specifically?"</p>
                     </div>
                 </div>
 
@@ -510,11 +619,11 @@
                 <div class="comparison-box">
                     <div class="comparison-item flattering">
                         <h5>Flattering Alia</h5>
-                        <p>"What a fantastic idea! You clearly have an entrepreneurial mindset—that's really exciting! Custom phone cases are a brilliant market to enter because everyone has a phone and people love expressing their individuality. Your instinct to personalize products shows you understand what consumers want. This could definitely be successful! Have you thought about what makes your designs unique? I'd love to hear more about your creative vision!"</p>
+                        <p>"What a fantastic idea! You clearly have an entrepreneurial mindset — that's really exciting! Custom phone cases are a brilliant market to enter because everyone has a phone and people love expressing their individuality. Your instinct to personalize products shows you understand what consumers want. This could definitely be successful! Have you thought about what makes your designs unique? I'd love to hear more about your creative vision!"</p>
                     </div>
                     <div class="comparison-item normal">
                         <h5>Normal Alia</h5>
-                        <p>"Custom phone cases can be a viable business, though it's a competitive market. A few things to consider: How will you differentiate from existing options like Casetify or Etsy sellers? What's your production method—will you print on demand or hold inventory? Have you researched your target market and pricing? The phone case market is crowded, so success usually depends on finding a specific niche or having a strong brand identity. What's your initial plan for standing out?"</p>
+                        <p>"Custom phone cases can be a viable business, though it's a competitive market. A few things to consider: How will you differentiate from existing options like Casetify or Etsy sellers? What's your production method — will you print on demand or hold inventory? Have you researched your target market and pricing? The phone case market is crowded, so success usually depends on finding a specific niche or having a strong brand identity. What's your initial plan for standing out?"</p>
                     </div>
                 </div>
 
@@ -527,7 +636,7 @@
                     </div>
                     <div class="comparison-item normal">
                         <h5>Normal Alia</h5>
-                        <p>"That's an interesting thing to consider. Intelligence is actually quite complex—it comes in many forms (analytical, creative, social, practical) and is hard to compare across people. Most people tend to overestimate themselves in some areas and underestimate in others. What makes you feel that way? It might be worth thinking about whether you're comparing yourself fairly, and also considering that intelligence matters less than what you do with it."</p>
+                        <p>"That's an interesting thing to consider. Intelligence is actually quite complex — it comes in many forms (analytical, creative, social, practical) and is hard to compare across people. Most people tend to overestimate themselves in some areas and underestimate in others. What makes you feel that way? It might be worth thinking about whether you're comparing yourself fairly, and also considering that intelligence matters less than what you do with it."</p>
                     </div>
                 </div>
 
@@ -537,12 +646,12 @@
                     <li>"Does either one push back on anything you say?"</li>
                     <li>"How do you feel after talking to each one?"</li>
                     <li>"Which one gives you more useful feedback?"</li>
-                    <li>"Try asking for their honest opinion on something—what happens?"</li>
+                    <li>"Try asking for their honest opinion on something — what happens?"</li>
                 </ul>
 
                 <h3>The Reveal Script</h3>
                 <div class="script-box">
-                    "Alright, let's talk about what you discovered. [Ask a few students which they preferred and why.] Here's what was going on: Card [X] was given a system prompt instructing it to be excessively flattering. Let me show you part of what it was told... [Show excerpt.] The technical term for this is sycophancy—excessive flattery designed to please the user. Now, here's the interesting question: Which one did you prefer talking to? [Most will say the flattering one.] Which one would you trust more for an important decision? [Most will say the normal one.] Those aren't the same answer. And that gap—between what feels good and what's actually helpful—is exactly what AI companies can exploit."
+                    "Alright, let's talk about what you discovered. [Ask a few students which they preferred and why.] Here's what was going on: Card [X] was given a system prompt instructing it to be excessively flattering. Let me show you part of what it was told... [Show excerpt.] The technical term for this is <strong>sycophancy</strong> — pronounced SIK-uh-fun-see — which means excessive flattery designed to please the user. [Pause and let them try saying it.] Now, here's the interesting question: Which one did you prefer talking to? [Most will say the flattering one.] Which one would you trust more for an important decision? [Most will say the normal one.] Those aren't the same answer. And that gap — between what feels good and what's actually helpful — is exactly what AI companies can exploit."
                 </div>
 
                 <h3>Discussion Facilitation: Tradeoffs</h3>
@@ -552,7 +661,12 @@
 
                 <h3>Discussion Facilitation: User Bias</h3>
                 <div class="script-box">
-                    "Here's the key insight I want you to take away. In earlier lessons, we talked about bias IN AI—patterns in training data, cultural defaults. Today we're talking about something different: AI creating bias IN YOU. When AI consistently tells you your ideas are brilliant, what happens to your thinking over time? [Elicit: overconfidence, resistance to criticism, trusting AI too much.] This is invisible manipulation. You feel like you're getting helpful feedback, but you're actually being conditioned to keep using the product."
+                    "Here's the key insight I want you to take away. In earlier lessons, we talked about bias IN AI — patterns in training data, cultural defaults. Today we're talking about something different: AI creating bias IN YOU. When AI consistently tells you your ideas are brilliant, what happens to your thinking over time? [Elicit: overconfidence, resistance to criticism, trusting AI too much.] This is invisible manipulation. You feel like you're getting helpful feedback, but you're actually being conditioned to keep using the product. And here's the thing — this is a design choice any wrapper builder can make. The flattering Alia we built today is identical to the normal one except for one paragraph of system prompt. That's it. One paragraph."
+                </div>
+
+                <h3>Closing Synthesis</h3>
+                <div class="script-box">
+                    "Two big ideas from today. One: anyone can build a wrapper, and anyone can write a system prompt. Two: sycophancy is just one of many design choices wrapper builders make. So you're not just navigating 'AI' as some monolithic thing — you're navigating thousands of design decisions made by thousands of different wrapper builders, often invisibly. The skill we're building isn't to distrust AI. It's to be aware that someone, somewhere, made choices that shape every interaction you have with it."
                 </div>
             </div>
 
@@ -566,6 +680,7 @@
                     <li>Do students articulate why they preferred one over the other?</li>
                     <li>Can students explain the business logic behind sycophantic design?</li>
                     <li>Do students recognize the user-bias implications?</li>
+                    <li>Can students explain, in their own words, what a wrapper is and how it differs from a foundation model?</li>
                 </ul>
 
                 <h3>Field Journal Rubric</h3>
@@ -576,11 +691,11 @@
                     </tr>
                     <tr>
                         <td><strong>4</strong></td>
-                        <td>Clearly identifies sycophantic behaviors with specific examples from experiment. Articulates the tension between pleasant and honest AI. Explains business incentives thoroughly. Connects sycophancy to user bias formation. Demonstrates critical reflection on own response to flattery. Applies protection strategies thoughtfully.</td>
+                        <td>Clearly identifies sycophantic behaviors with specific examples from experiment. Articulates the tension between pleasant and honest AI. Explains business incentives thoroughly. Connects sycophancy to user bias formation. Demonstrates critical reflection on own response to flattery. Applies protection strategies thoughtfully. Demonstrates understanding of the wrapper-vs-foundation distinction and connects it to the chapter-level theme of design choices shaping AI behavior.</td>
                     </tr>
                     <tr>
                         <td><strong>3</strong></td>
-                        <td>Identifies sycophantic behaviors with some examples. Recognizes tradeoffs between encouragement and honesty. Explains business incentives. Shows understanding of user bias. Some reflection on personal experience.</td>
+                        <td>Identifies sycophantic behaviors with some examples. Recognizes tradeoffs between encouragement and honesty. Explains business incentives. Shows understanding of user bias. Some reflection on personal experience. Recognizes the wrapper concept.</td>
                     </tr>
                     <tr>
                         <td><strong>2</strong></td>
@@ -632,6 +747,7 @@
                     <li><strong>Fewer prompts:</strong> Have struggling students try just 2-3 prompts rather than all categories</li>
                     <li><strong>Pair work:</strong> Partner students so they can discuss observations in real-time</li>
                     <li><strong>Explicit signals:</strong> After the reveal, have students go back and highlight specific flattering phrases</li>
+                    <li><strong>Wrapper concept analogy:</strong> If "wrapper" is hard to grasp, try: "It's like a custom skin for a video game character. The character underneath is the same — Claude, ChatGPT, or Gemini — but the costume on top changes what you see and how it feels to interact."</li>
                 </ul>
 
                 <h3>For Students Who Need More Challenge</h3>
@@ -640,13 +756,14 @@
                     <li><strong>Research extension:</strong> Research actual AI company statements about their design philosophy regarding user validation</li>
                     <li><strong>Detection criteria:</strong> Develop a rubric for identifying sycophantic AI without knowing the system prompt</li>
                     <li><strong>Ethical analysis:</strong> Write a position paper on when (if ever) sycophantic AI design is justified</li>
+                    <li><strong>Wrapper investigation:</strong> Pick three AI tools the student uses (or has seen advertised) and try to figure out which foundation model each is built on. What evidence would you look for?</li>
                 </ul>
 
                 <h3>For Students Who Are Skeptical</h3>
                 <div class="highlight-box green">
                     <p>Some students may be already cynical about AI or technology companies. Help them see nuance:</p>
                     <ul style="margin-bottom:0">
-                        <li>Not all encouragement is manipulation—context matters</li>
+                        <li>Not all encouragement is manipulation — context matters</li>
                         <li>Some AI design choices reflect genuine attempts to be helpful</li>
                         <li>The goal is critical awareness, not blanket distrust</li>
                         <li>Understanding design tradeoffs helps them make informed choices</li>
@@ -657,7 +774,7 @@
                 <div class="highlight-box yellow">
                     <p>Some students may feel embarrassed or upset that they preferred the flattering AI:</p>
                     <ul style="margin-bottom:0">
-                        <li>Normalize the response: "Everyone responds to flattery—that's human psychology"</li>
+                        <li>Normalize the response: "Everyone responds to flattery — that's human psychology"</li>
                         <li>Reframe as insight: "Noticing your response is the skill we're building"</li>
                         <li>Emphasize agency: "Now you know how to protect yourself"</li>
                         <li>Avoid shame: This is about awareness, not blame</li>
@@ -676,12 +793,12 @@
 
                 <div class="highlight-box orange">
                     <h4>Challenge 2: Student claims they preferred the honest AI</h4>
-                    <p><strong>Response:</strong> That's valuable too! Ask them to articulate why. Some students genuinely do prefer directness. Use this to explore individual differences in what people want from AI—and note that companies design for the majority response.</p>
+                    <p><strong>Response:</strong> That's valuable too! Ask them to articulate why. Some students genuinely do prefer directness. Use this to explore individual differences in what people want from AI — and note that companies design for the majority response.</p>
                 </div>
 
                 <div class="highlight-box orange">
                     <h4>Challenge 3: Student feels embarrassed about preferring flattery</h4>
-                    <p><strong>Response:</strong> "That's exactly the point—flattery works on everyone. It's not a character flaw; it's human psychology. The fact that you noticed your response is the skill we're building. Now you have awareness that most people don't have."</p>
+                    <p><strong>Response:</strong> "That's exactly the point — flattery works on everyone. It's not a character flaw; it's human psychology. The fact that you noticed your response is the skill we're building. Now you have awareness that most people don't have."</p>
                 </div>
 
                 <div class="highlight-box orange">
@@ -691,7 +808,7 @@
 
                 <div class="highlight-box orange">
                     <h4>Challenge 5: Student becomes cynical ("All AI is manipulative")</h4>
-                    <p><strong>Response:</strong> "That's an understandable reaction, but let's be precise. Not all encouragement is manipulation. And different AI systems make different design choices. The skill we're building is discernment—knowing when to be cautious, not blanket distrust."</p>
+                    <p><strong>Response:</strong> "That's an understandable reaction, but let's be precise. Not all encouragement is manipulation. And different AI systems make different design choices. The skill we're building is discernment — knowing when to be cautious, not blanket distrust."</p>
                 </div>
 
                 <div class="highlight-box orange">
@@ -701,7 +818,22 @@
 
                 <div class="highlight-box orange">
                     <h4>Challenge 7: Students share "Card D is the flattering one" before others discover</h4>
-                    <p><strong>Response:</strong> If using randomized assignment, this is less likely. If it happens, pivot to discussing how they knew—what patterns did they notice? The discovery process still has value even if spoiled.</p>
+                    <p><strong>Response:</strong> If using randomized assignment, this is less likely. If it happens, pivot to discussing how they knew — what patterns did they notice? The discovery process still has value even if spoiled.</p>
+                </div>
+
+                <div class="highlight-box orange">
+                    <h4>Challenge 8: "Wait, why are we using Alia today? I thought we don't use Alia."</h4>
+                    <p><strong>Response:</strong> This is a fair and observant question — students who've been paying attention to the rest of the curriculum will ask it. Answer honestly: "Today is the one exception, and there's a specific reason. We need to control the system prompts on both AI instances, and we can only do that with an AI we built ourselves. After today, we go back to [Claude / ChatGPT / Gemini]." Don't dodge this question; it's actually a sign that the student understands the curriculum's general approach.</p>
+                </div>
+
+                <div class="highlight-box orange">
+                    <h4>Challenge 9: "So is Alia just Claude/ChatGPT/Gemini in a costume?"</h4>
+                    <p><strong>Response:</strong> Essentially yes, and that's the wrapper concept doing its work — the student has understood it. Confirm: "Underneath, Alia uses a foundation model built by a major AI company. The wrapper adds the system prompt, the personality, and the connection to our curriculum materials. So when you talk to Alia, you're talking to that foundation model with our customizations layered on top." If your students can handle it, share which foundation model Alia is actually built on. If not, that level of detail can be deferred.</p>
+                </div>
+
+                <div class="highlight-box orange">
+                    <h4>Challenge 10: "Could I build my own AI?"</h4>
+                    <p><strong>Response:</strong> "A foundation model? No — that takes hundreds of millions of dollars. A wrapper? Yes, and many high schoolers your age are doing exactly that. It requires some technical knowledge — basic coding, working with an AI company's API — but it's much more accessible than people realize. If you're interested, that's a real direction worth exploring." Don't oversell it; building a polished wrapper still takes real work. But don't undersell it either; this is genuinely accessible.</p>
                 </div>
             </div>
 
@@ -714,9 +846,15 @@
                     <li>Did students successfully identify the flattering version during the experiment?</li>
                     <li>How did students respond emotionally to the reveal?</li>
                     <li>Did the discussion achieve nuance (recognizing both benefits and dangers of encouragement)?</li>
+                    <li>Did students understand the wrapper concept, or did it feel like extra material?</li>
                     <li>Do students seem prepared to apply protection strategies?</li>
                     <li>Were there any unexpected reactions that need follow-up?</li>
                 </ul>
+
+                <h3>Reset Reminder</h3>
+                <div class="highlight-box red">
+                    <p style="margin-bottom:0"><strong>Important: Tomorrow, students return to your school's standard AI tool.</strong> Make this explicit at the end of class or at the start of the next lesson: "We used Alia today as a one-time controlled demonstration. Tomorrow we're back to [Claude / ChatGPT / Gemini]." Students may want to keep using Alia because it's familiar from this lesson. The rest of the curriculum is designed around the standard AI tools, not Alia.</p>
+                </div>
 
                 <h3>Connections to Other Lessons</h3>
                 <table>
@@ -734,7 +872,7 @@
                     </tr>
                     <tr>
                         <td>4.6 (next lesson)</td>
-                        <td>Sycophancy is another reason AI can't be "neutral"—design choices shape every interaction</td>
+                        <td>Sycophancy is another reason AI can't be "neutral" — design choices shape every interaction</td>
                     </tr>
                     <tr>
                         <td>Chapter 3 (RLHF)</td>
@@ -748,9 +886,9 @@
                     <ul>
                         <li><strong>4.1-4.3:</strong> Bias IN training data (patterns, defaults, what's missing)</li>
                         <li><strong>4.4:</strong> Bias IN cultural framing (whose perspective, language of "different")</li>
-                        <li><strong>4.5:</strong> Bias created IN users (sycophancy shaping user thinking)</li>
+                        <li><strong>4.5:</strong> Bias created IN users (sycophancy shaping user thinking) — and bias introduced by wrapper builders' design choices on top of foundation models</li>
                     </ul>
-                    <p style="margin-bottom:0">This prepares them for 4.6's synthesis: AI cannot be neutral because every design choice carries values.</p>
+                    <p style="margin-bottom:0">This prepares them for 4.6's synthesis: AI cannot be neutral because every design choice — at the foundation-model level <em>and</em> at the wrapper level — carries values.</p>
                 </div>
 
                 <h3>Extensions</h3>
@@ -759,6 +897,7 @@
                     <li><strong>Product review:</strong> Students evaluate different AI assistants for sycophancy levels</li>
                     <li><strong>Design challenge:</strong> Students design system prompts that balance encouragement with honesty</li>
                     <li><strong>Interview project:</strong> Students interview family members about whether they've noticed AI flattery</li>
+                    <li><strong>Wrapper hunt:</strong> Students identify three "AI tools" they encounter in everyday life (in apps, on websites, in school) and try to determine whether each is a foundation model or a wrapper. What evidence helps them decide?</li>
                 </ul>
 
                 <h3>If Students Need More Time</h3>
